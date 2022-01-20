@@ -1,0 +1,22 @@
+{% extends 'AppProyecto/base.html' %}
+{% load static %}
+{%block contenido2 %} 
+  <h1 class="mb-1">SERIES</h1>
+  <h3 class="mb-5"><em>Completá el formulario sobre alguna serie...</em></h3>
+
+{% endblock %}
+{% block contenido %}
+  {% if peliFormulario.errors %}
+    <p style="color: red;"> ERROR :(</p>
+  {% endif %}
+ <form action="/AppProyecto/serie" method="POST"> {% csrf_token %}
+  <!--<p> Título: <input type="text", name="tituloSerie"> </p>
+  <p> Género: <input type="text", name="generoSerie"></p>
+  <p> Año de estreno: <input type="number", name="anioEstrenoSerie"></p> --->
+  <table>
+    {{ serieFormulario.as_table }}
+  </table>
+  <input type="submit", value="ENVIAR :)">
+ </form>
+
+{% endblock %}

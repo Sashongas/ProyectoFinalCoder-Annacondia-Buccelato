@@ -1,0 +1,21 @@
+{% extends 'AppProyecto/base.html' %}
+{% load static %}
+
+{%block contenido2 %} 
+  <h1 class="mb-1">RESULTADO DE LA BUSQUEDA</h1>
+
+{% endblock %}
+
+{% block contenido %}
+ {% if docs %}
+  <ul>
+      {% for doc in docs %} 
+      <li><p> TITULO: {{doc.tituloDoc}} </p>
+          <p> GENERO: {{doc.generoDoc}} </p>
+          <p> AÑO DE ESTRENO: {{doc.anioEstrenoDoc}} </p>
+      </li>
+     {% endfor %}    
+    </ul>
+    
+ {% endif %}
+{% endblock %}

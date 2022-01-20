@@ -1,0 +1,14 @@
+{% extends 'AppProyecto/base.html' %}
+{% load static %}
+
+ {% block contenido2 %} 
+  <h1 class="mb-1">Detalles de las Peliculas :)</h1>
+
+ {% endblock %}
+ {% block contenido %}
+  <form method="post"> {% csrf_token %}
+   ¿Está seguro que desea eliminar la película?
+   <input type="submit" value="Si, estoy seguro">
+  </form>
+{% endblock %}
+

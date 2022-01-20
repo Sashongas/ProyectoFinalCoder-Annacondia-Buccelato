@@ -1,0 +1,14 @@
+{% extends 'AppProyecto/base.html' %}
+{% load static %}
+
+ {% block contenido2 %} 
+  <h1 class="mb-1">Editar Series :)</h1>
+
+ {% endblock %}
+ {% block contenido %}
+  <form method="post">
+     {% csrf_token %}
+     {{ forms.as_p }}
+     <input type="submit" value="Enviar"/>
+  </form>
+ {% endblock %}

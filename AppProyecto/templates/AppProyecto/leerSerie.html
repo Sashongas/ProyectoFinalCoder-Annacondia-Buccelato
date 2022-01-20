@@ -1,0 +1,23 @@
+{% extends 'AppProyecto/base.html' %}
+{% load static %}
+
+{%block contenido2 %} 
+  <h1 class="mb-1">Series en nuestra Base de Datos :)</h1>
+
+{% endblock %}
+
+{% block contenido %}
+ 
+ {% for serie in series %} 
+  <li> {{serie}} </li>
+  
+   <a href="{% url 'EliminarSerie' serie.tituloSerie %}"> ELIMINAR </a> 
+   <a href="{% url 'EditarSerie' serie.tituloSerie %}"> EDITAR </a>
+  <br>
+  <br>
+ {% endfor %} 
+ <button>
+  <a href="{% url 'Serie' %}"> AGREGAR OTRA SERIE </a> 
+
+ </button>
+{% endblock %}

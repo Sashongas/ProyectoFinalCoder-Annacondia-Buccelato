@@ -1,0 +1,25 @@
+{% extends 'AppProyecto/base.html' %}
+{% load static %}
+
+{%block contenido2 %} 
+  <h1 class="mb-1">PELICULAS</h1>
+  <h3 class="mb-5"><em>Completá el formulario sobre alguna película ...</em></h3>
+
+{% endblock %}
+
+{% block contenido %}
+ {% if peliFormulario.errors %}
+ <p style="color: red;"> ERROR :(</p>
+ {% endif %} 
+ <form action="/AppProyecto/pelicula" method="POST"> {% csrf_token %}
+   <!-- <p> Título: <input type="text", name="tituloPeli"> </p>
+   <p> Género: <input type="text", name="generoPeli"></p>
+   <p> Año de estreno: <input type="number", name="anioEstrenoPeli"></p>
+    -->
+   <table>
+     {{ peliFormulario.as_table }}
+   </table>
+   <input type="submit", value="ENVIAR :)">
+  </form>
+  
+ {% endblock %}

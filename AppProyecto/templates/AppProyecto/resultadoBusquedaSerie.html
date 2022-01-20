@@ -1,0 +1,21 @@
+{% extends 'AppProyecto/base.html' %}
+{% load static %}
+
+{%block contenido2 %} 
+  <h1 class="mb-1">RESULTADO DE LA BUSQUEDA</h1>
+
+{% endblock %}
+
+{% block contenido %}
+ {% if series %}
+  <ul>
+      {% for serie in series %} 
+      <li><p> TITULO: {{serie.tituloSerie}} </p>
+          <p> GENERO: {{serie.generoSerie}} </p>
+          <p> AÑO DE ESTRENO: {{serie.anioEstrenoSerie}} </p>
+      </li>
+     {% endfor %}    
+    </ul>
+    
+ {% endif %}
+{% endblock %}

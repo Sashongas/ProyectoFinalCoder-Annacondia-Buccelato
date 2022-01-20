@@ -1,0 +1,23 @@
+{% extends 'AppProyecto/base.html' %}
+{% load static %}
+
+{%block contenido2 %} 
+  <h1 class="mb-1">Documentales en nuestra Base de Datos :)</h1>
+
+{% endblock %}
+
+{% block contenido %}
+ 
+ {% for doc in docs %} 
+  <li> {{doc}} </li>
+  
+   <a href="{% url 'EliminarDoc' doc.tituloDoc %}"> ELIMINAR </a> 
+   <a href="{% url 'EditarDoc' doc.tituloDoc %}"> EDITAR </a>
+  
+  <br>
+  <br>
+ {% endfor %} 
+ <button>
+  <a href="{% url 'Documental' %}"> AGREGAR OTRO DOCUMENTAL </a> 
+ </button>
+{% endblock %}

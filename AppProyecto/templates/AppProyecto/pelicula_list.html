@@ -1,0 +1,24 @@
+{% extends 'AppProyecto/base.html' %}
+{% load static %}
+
+{%block contenido2 %} 
+  <h1 class="mb-1">Peliculas en nuestra Base de Datos :)</h1>
+
+{% endblock %}
+
+{% block contenido %}
+ 
+ {% for p in object_list %} 
+  <li> 
+  <p>NOMBRE: {{p.tituloPeli}}</p>
+   <a href="{% url 'Detail' p.id %}"> VER MAS </a> 
+   <a href="{% url 'Edit' p.id %}"> EDITAR </a>
+   <a href="{% url 'Delete' p.id %}"> BORRAR </a>
+   <br>
+   <br>
+  </li>
+ {% endfor %} 
+ <button>
+  <a href="{% url 'Pelicula' %}"> AGREGAR OTRA PELÍCULA </a> 
+ </button>
+{% endblock %}

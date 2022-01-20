@@ -1,0 +1,23 @@
+{% extends 'AppProyecto/base.html' %}
+{% load static %}
+{%block contenido2 %} 
+  <h1 class="mb-1">DOCUMENTALES</h1>
+  <h3 class="mb-5"><em>Completá el formulario sobre algún documental...</em></h3>
+
+{% endblock %}
+{% block contenido %}
+   {% if docFormulario.errors %}
+     <p style="color: red;"> ERROR :(</p>
+    {% endif %}
+<form action="/AppProyecto/documental" method="POST"> {% csrf_token %}
+  <!-- <p> Título: <input type="text", name="tituloDoc"> </p>
+  <p> Género: <input type="text", name="generoDoc"></p>
+  <p> Año de estreno: <input type="number", name="anioEstrenoDoc"></p> --->
+  <table>
+    {{ docFormulario.as_table }}
+  </table>
+  <input type="submit", value="ENVIAR :)">
+ </form>
+
+
+{% endblock %}

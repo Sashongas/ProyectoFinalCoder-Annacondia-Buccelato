@@ -1,0 +1,16 @@
+{% extends 'AppProyecto/base.html' %}
+{% load static %}
+
+ {% block contenido2 %} 
+  <h1 class="mb-1">Detalles de las Series :)</h1>
+
+ {% endblock %}
+ {% block contenido %}
+ <p>Genero: <i> {{ serie.generoSerie }} </i></p>
+ <p>Titulo: <i>{{ serie.tituloSerie }} </i></p>
+  <p>Año: <i> {{ serie.anioEstrenoSerie }} </i></p>
+
+  <p>
+     <a href="{% url 'SerieList' %}">REGRESAR</a>
+  </p>
+ {% endblock %}

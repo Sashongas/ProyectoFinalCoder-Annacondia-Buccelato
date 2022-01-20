@@ -1,0 +1,16 @@
+{% extends 'AppProyecto/base.html' %}
+{% load static %}
+
+ {% block contenido2 %} 
+  <h1 class="mb-1">Detalles de las Peliculas :)</h1>
+
+ {% endblock %}
+ {% block contenido %}
+ <p>Genero: <i> {{ p.generoPeli }} </i></p>
+ <p>Titulo: <i>{{ p.tituloPeli }} </i></p>
+  <p>Año: <i> {{ p.anioEstrenoPeli }} </i></p>
+
+  <p>
+     <a href="{% url 'List' %}">REGRESAR</a>
+  </p>
+ {% endblock %}

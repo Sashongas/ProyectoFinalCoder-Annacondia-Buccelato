@@ -1,0 +1,16 @@
+{% extends 'AppProyecto/base.html' %}
+{% load static %}
+
+{%block contenido2 %} 
+  <h1 class="mb-1">¡Busqueda!</h1>
+  <h3 class="mb-5"><em>Buscá algúna película en nuestra BD :o</em></h3>
+
+{% endblock %}
+
+{% block contenido %}
+ <form action="/AppProyecto/buscarPelicula/" method="GET">
+   <input type="text" name="tituloPeli" id="tituloPeli">
+   <input type="submit" value="BUSCAR"> 
+ </form>
+
+{% endblock %}
